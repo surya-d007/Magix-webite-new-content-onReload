@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="circle circle-top-1 moving-div"></div>
+    <div class="circle circle-top-2"></div>
+    <section class="title-description">
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        <div class="circle circle-4"></div>
+        <section class="title text-center py-5">
+            <h1 class="fw-bold"><%= website_content.title %></h1>
+        </section>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-7 ">
+                    <p class="description-card description-card-left p-4 m-4 rounded-4 shadow"><%= website_content.description_1 %></p>
+                </div>
+                <div class="col-5">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-5">
+                </div>
+                <div class="col-7">
+                    <p class="description-card description-card-right p-4 m-4 rounded-4 shadow"><%= website_content.description_2 %></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-7">
+                    <p class="description-card description-card-left p-4 m-4 rounded-4 shadow"><%= website_content.description_3 %></p>
+                </div>
+                <div class="col-5">
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-5">
+                </div>
+                <div class="col-7">
+                    <p class="description-card description-card-right p-4 m-4 rounded-4 shadow"><%= website_content.description_4 %></p>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+         
+    </section>
+    
+    <section class="more-info mt-5 pt-5">
+        <h1 class="m-5">"Exceptional Findings for Your Consideration"</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+
+                </div>
+                <div class="col-8">
+                    <ul>
+                        <li class="my-4"><h4><%= website_content.discovery_1 %></h4></li>
+                        <li class="my-4"><h4><%= website_content.discovery_2 %></h4></li>
+                        <li class="my-4"><h4><%= website_content.discovery_3 %></h4></li>
+                        <li class="my-4" ><h4><%= website_content.discovery_4 %></h4></li>
+
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+   <script>
+    const movingDiv = document.querySelector('.moving-div');
+
+function setRandomAnimation() {
+    const translateXStart = Math.random() * 10 - 5 + 'vw'; // Random value between -5vw and 5vw
+    const translateYStart = Math.random() * 100 + 'px'; // Random value between 0px and 100px
+
+    document.documentElement.style.setProperty('--translateX-start', translateXStart);
+    document.documentElement.style.setProperty('--translateY-start', translateYStart);
+
+    movingDiv.style.animation = 'none';
+    setTimeout(() => {
+        movingDiv.style.animation = 'waveMotion 4s linear infinite';
+    }, 0);
+}
+
+setRandomAnimation();
+movingDiv.addEventListener('animationiteration', setRandomAnimation);
+
+   </script>
+</body>
+</html>
+
