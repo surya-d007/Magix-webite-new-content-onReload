@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 
 app.get('/',async (req, res) => {
-  //const website_content =await generateChatCompletion();
+  const website_content =await generateChatCompletion();
     /*var website_content =
     {
       title: '"The Art of Happiness: Unlocking Joy"',
